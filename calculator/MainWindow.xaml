@@ -1,0 +1,87 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d" FontSize="20"
+        Title="Calculator" Height="500" Width="350"
+		AllowsTransparency="True"
+        WindowStyle="None" ResizeMode="NoResize"
+		FontFamily="Segoe UI Semibold"
+        WindowStartupLocation="CenterScreen"
+		Background="{x:Null}">
+	<Window.Resources>
+		<SolidColorBrush x:Key="Button" Color="#FF2B2B2B"/>
+		<Style TargetType="Button" x:Key="textColor">
+            <Setter Property="Foreground" Value="#FFE2D2D2"/>
+			<Setter Property="BorderBrush" Value="#FF514E4E" />
+			<Setter Property="Background" Value="#FF2C2828" />
+		</Style>
+		<SolidColorBrush x:Key="borderbutton" Color="#FF6C5858"/>
+		<Popup x:Key="cmButton">
+			<Button Width="75" Content="Exit" Click="exitApp" Padding="2" Background="{DynamicResource borderbutton}" Foreground="White" />
+		</Popup>
+	</Window.Resources>
+
+	<Border Background="#FF534C4C" CornerRadius="10">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="10" />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition Width="10" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="10" />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition Height="10" />
+			</Grid.RowDefinitions>
+
+			<Button ToolTip="Option(s)" Canvas.ZIndex="3" MaxHeight="20"  x:Name="Menu" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Background="{x:Null}" BorderThickness="0" Foreground="White" Click="menuClick">
+				<materialDesign:PackIcon Kind="ExitToApp" />
+			</Button>
+			
+			<!--Number buttons-->
+			<Button x:Name="btn1" Grid.Column="1" Grid.Row="3" Style="{StaticResource textColor}" Click="btn1_Click">1</Button>
+			<Button x:Name="btn2" Grid.Column="2" Grid.Row="3" Style="{StaticResource textColor}" Click="btn2_Click">2</Button>
+			<Button x:Name="btn3" Grid.Column="3" Grid.Row="3" Style="{StaticResource textColor}" Click="btn3_Click">3</Button>
+
+			<Button x:Name="btn4" Grid.Column="1" Grid.Row="4" Style="{StaticResource textColor}" Click="btn4_Click">4</Button>
+			<Button x:Name="btn5" Grid.Column="2" Grid.Row="4" Style="{StaticResource textColor}" Click="btn5_Click">5</Button>
+			<Button x:Name="btn6" Grid.Column="3" Grid.Row="4" Style="{StaticResource textColor}" Click="btn6_Click">6</Button>
+
+			<Button x:Name="btn7" Grid.Column="1" Grid.Row="5" Style="{StaticResource textColor}" Click="btn7_Click">7</Button>
+			<Button x:Name="btn8" Grid.Column="2" Grid.Row="5" Style="{StaticResource textColor}" Click="btn8_Click">8</Button>
+			<Button x:Name="btn9" Grid.Column="3" Grid.Row="5" Style="{StaticResource textColor}" Click="btn9_Click">9</Button>
+
+			<Button x:Name="btn0" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Style="{StaticResource textColor}" Click="btn0_Click">0</Button>
+
+			<!--Operations-->
+			<Button x:Name="btnPLUS" Grid.Column="4" Grid.Row="2" Style="{StaticResource textColor}" Click="btnPLUS_Click">+</Button>
+			<Button x:Name="btnMINUS" Grid.Column="4" Grid.Row="3" Style="{StaticResource textColor}" Click="btnMINUS_Click">-</Button>
+			<Button x:Name="btnDIV" Grid.Column="4" Grid.Row="4" Style="{StaticResource textColor}" Click="btnDIV_Click">/</Button>
+			<Button x:Name="btnMULT" Grid.Column="4" Grid.Row="5" Style="{StaticResource textColor}" Click="btnMULT_Click">*</Button>
+			<Button x:Name="btnEQ" Grid.Column="4" Grid.Row="6" Style="{StaticResource textColor}" Click="btnEQ_Click">=</Button>
+			<Button x:Name="btnCE" Grid.Column="1" Grid.Row="2" Style="{StaticResource textColor}" Click="btnCE_Click">CE</Button>
+			<Button x:Name="btnbackspace" Grid.Column="2" Grid.Row="2" Style="{StaticResource textColor}" Click="btnbackspace_Click">&lt;-</Button>
+			<Button x:Name="btnMOD" Grid.Column="3" Grid.Row="2" Style="{StaticResource textColor}" Click="btnMOD_Click">%</Button>
+
+			<!--Empty Button-->
+			<!--<Button Grid.Column="1" Grid.Row="6" Style="{StaticResource textColor}"></Button>
+			<Button Grid.Column="3" Grid.Row="6" Style="{StaticResource textColor}"></Button>
+			-->
+		
+			<!--Textbox-->
+            <TextBox x:Name="numberDisplay" BorderThickness="0" MaxLength="10" Background="{x:Null}" IsReadOnly="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Text="0" FontSize="50" Foreground="#FFE2D2D2" TextAlignment="Right" FontFamily="Segoe UI Semibold"/>
+		</Grid>
+	</Border>
+</Window>
