@@ -327,7 +327,7 @@ namespace calculator
 
 		private void menuClick(object sender, RoutedEventArgs e)
 		{
-			System.Windows.Controls.Primitives.Popup cm = this.FindResource("cmButton") as System.Windows.Controls.Primitives.Popup;
+			ContextMenu cm = this.FindResource("cmButton") as ContextMenu;
 			if (cm.IsOpen)
 			{
 				cm.IsOpen = false;
@@ -340,6 +340,17 @@ namespace calculator
 		private void exitApp(object sender, RoutedEventArgs e)
 		{
 			Application.Current.Shutdown();
+		}
+		private void loadMatrix(object sender, RoutedEventArgs e)
+		{
+			Window matrix = new Matrices();
+			matrix.Show();
+			ContextMenu cm = this.FindResource("cmButton") as ContextMenu;
+			if (cm.IsOpen)
+			{
+				cm.IsOpen = false;
+				return;
+			}
 		}
 	}
 }

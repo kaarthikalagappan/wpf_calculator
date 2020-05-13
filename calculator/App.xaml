@@ -5,7 +5,14 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 		<ResourceDictionary>
-			<ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="Button" Color="#FF2B2B2B"/>
+            <SolidColorBrush x:Key="borderbutton" Color="#FF6C5858"/>
+            <Style TargetType="Button" x:Key="textColor">
+                <Setter Property="Foreground" Value="#FFE2D2D2"/>
+                <Setter Property="BorderBrush" Value="#FF514E4E" />
+                <Setter Property="Background" Value="#FF2C2828" />
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
 				<!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
 				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />-->
 				</ResourceDictionary.MergedDictionaries>

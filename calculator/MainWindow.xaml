@@ -12,17 +12,11 @@
 		FontFamily="Segoe UI Semibold"
         WindowStartupLocation="CenterScreen"
 		Background="{x:Null}">
-	<Window.Resources>
-		<SolidColorBrush x:Key="Button" Color="#FF2B2B2B"/>
-		<Style TargetType="Button" x:Key="textColor">
-            <Setter Property="Foreground" Value="#FFE2D2D2"/>
-			<Setter Property="BorderBrush" Value="#FF514E4E" />
-			<Setter Property="Background" Value="#FF2C2828" />
-		</Style>
-		<SolidColorBrush x:Key="borderbutton" Color="#FF6C5858"/>
-		<Popup x:Key="cmButton">
+    <Window.Resources>
+        <ContextMenu x:Key="cmButton">
 			<Button Width="75" Content="Exit" Click="exitApp" Padding="2" Background="{DynamicResource borderbutton}" Foreground="White" />
-		</Popup>
+            <Button Width="75" Content="Matrix Calc" Click="loadMatrix" Padding="2" Background="{DynamicResource borderbutton}" Foreground="White" />
+		</ContextMenu>
 	</Window.Resources>
 
 	<Border Background="#FF534C4C" CornerRadius="10">
@@ -73,14 +67,9 @@
 			<Button x:Name="btnEQ" Grid.Column="4" Grid.Row="6" Style="{StaticResource textColor}" Click="btnEQ_Click">=</Button>
 			<Button x:Name="btnCE" Grid.Column="1" Grid.Row="2" Style="{StaticResource textColor}" Click="btnCE_Click">CE</Button>
 			<Button x:Name="btnbackspace" Grid.Column="2" Grid.Row="2" Style="{StaticResource textColor}" Click="btnbackspace_Click">&lt;-</Button>
-			<Button x:Name="btnMOD" Grid.Column="3" Grid.Row="2" Style="{StaticResource textColor}" Click="btnMOD_Click">%</Button>
+            <Button x:Name="btnMOD" Grid.Column="3" Grid.Row="2" Style="{StaticResource textColor}" Click="btnMOD_Click">%</Button>
 
-			<!--Empty Button-->
-			<!--<Button Grid.Column="1" Grid.Row="6" Style="{StaticResource textColor}"></Button>
-			<Button Grid.Column="3" Grid.Row="6" Style="{StaticResource textColor}"></Button>
-			-->
-		
-			<!--Textbox-->
+            <!--Textbox-->
             <TextBox x:Name="numberDisplay" BorderThickness="0" MaxLength="10" Background="{x:Null}" IsReadOnly="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Text="0" FontSize="50" Foreground="#FFE2D2D2" TextAlignment="Right" FontFamily="Segoe UI Semibold"/>
 		</Grid>
 	</Border>

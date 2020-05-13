@@ -20,3 +20,5 @@ C:\Users\kaart\source\repos\thecalculator\calculator\bin\Debug\MaterialDesignThe
 C:\Users\kaart\source\repos\thecalculator\calculator\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\kaart\source\repos\thecalculator\calculator\obj\Debug\calculator.csproj.CopyComplete
 C:\Users\kaart\source\repos\thecalculator\calculator\obj\Debug\App.baml
+C:\Users\kaart\source\repos\thecalculator\calculator\obj\Debug\Matrices.g.cs
+C:\Users\kaart\source\repos\thecalculator\calculator\obj\Debug\Matrices.baml
